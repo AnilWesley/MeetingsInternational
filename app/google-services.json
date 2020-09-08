@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "315515843916",
+    "firebase_url": "https://meetingsinternational-cba46.firebaseio.com",
+    "project_id": "meetingsinternational-cba46",
+    "storage_bucket": "meetingsinternational-cba46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315515843916:android:60f7fb0c2159449fe20be9",
+        "android_client_info": {
+          "package_name": "com.applications.meetingsinternational"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "315515843916-1rgfjo6pq1ho0vt17h83f0mb8a2l1uph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjkYwPxH5e4FgxdRkhXemCi2FSxllyOG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "315515843916-1rgfjo6pq1ho0vt17h83f0mb8a2l1uph.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
