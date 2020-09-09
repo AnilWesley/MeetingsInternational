@@ -65,7 +65,7 @@ public class RetrofitClient {
     }*/
 
 
-    private static final String BASE_URL = "https://www.longdom.com/";
+    private static final String BASE_URL = "https://www.meetingsint.com/";
     private static Retrofit retrofit;
 
 

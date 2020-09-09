@@ -60,8 +60,7 @@ public class ContactUsActivity extends AppCompatActivity {
     String date;
     @BindView(R.id.txtmail1)
     TextView txtmail1;
-    @BindView(R.id.txtmail2)
-    TextView txtmail2;
+
     @BindView(R.id.txtDail1)
     TextView txtDail1;
     @BindView(R.id.txtDail2)
@@ -85,21 +84,11 @@ public class ContactUsActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.txtmail1, R.id.txtmail2, R.id.txtDail1, R.id.txtDail2, R.id.btnDownload})
+    @OnClick({R.id.txtmail1, R.id.txtDail1, R.id.txtDail2, R.id.btnDownload})
     public void onViewClicked(View view) {
         switch (view.getId()) {
 
-            case R.id.txtmail2:
-                Intent i2 = new Intent(Intent.ACTION_SEND);
-                i2.setType("message/rfc822");
-                i2.putExtra(Intent.EXTRA_EMAIL, new String[]{txtmail2.getText().toString()});
 
-                try {
-                    startActivity(Intent.createChooser(i2, "Send mail..."));
-                } catch (ActivityNotFoundException ex) {
-                    Toast.makeText(ContactUsActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-                }
-                break;
 
             case R.id.txtmail1:
                 Intent i4 = new Intent(Intent.ACTION_SEND);

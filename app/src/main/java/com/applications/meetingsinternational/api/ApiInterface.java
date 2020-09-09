@@ -89,7 +89,7 @@ public interface ApiInterface {
     Call<UserLogin> processDataAppUser(@Body JsonObject body);
 
     @Multipart
-    @POST("api/conference/insert_abstract")
+    @POST("api/conference/abstract_insert")
     Call<SubmitAbstract> processDataSendAbstract(
             @Part MultipartBody.Part file,
             @Part("conf_id") RequestBody conf_id,
@@ -130,7 +130,7 @@ public interface ApiInterface {
     Call<BrochureDownload> processDataBrochureDownload(@Body JsonObject body);
 
     @Headers("Content-Type: application/json")
-    @POST("api/conference/mobiledata_insert_equiry")
+    @POST("api/conference/insert_equiry")
     Call<BaseResponse> processDataInsertSubscription(@Body JsonObject body);
 
     @Headers("Content-Type: application/json")

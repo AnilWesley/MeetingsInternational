@@ -127,7 +127,7 @@ public class PaymentActivity1 extends AppCompatActivity {
             emailID = getIntent().getStringExtra("emailID");
             country = getIntent().getStringExtra("country");
         }
-        currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+        currentDate = new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(new Date());
         Log.d(TAG, "onCreate: " + currentDate);
 
 
@@ -388,7 +388,7 @@ public class PaymentActivity1 extends AppCompatActivity {
                             try {
 
                                 @SuppressLint("SimpleDateFormat")
-                                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                                SimpleDateFormat formatter = new SimpleDateFormat("MMMM dd, yyyy");
 
                                 Date date1 = formatter.parse(currentDate);
 
@@ -407,6 +407,7 @@ public class PaymentActivity1 extends AppCompatActivity {
                                 }
 
                                 Date date3 = formatter.parse(categories.getNormalDate());
+                                Log.d(TAG, "onItemSelected: "+date3);
                                 assert date3 != null;
                                 if (date3.compareTo(date1) < 0) {
                                     Log.d(TAG, "onBindViewHolder:  current date is greater than early date ");
@@ -419,7 +420,7 @@ public class PaymentActivity1 extends AppCompatActivity {
                                     Log.d(TAG, "onBindViewHolder:  current date is less than early date ");
                                 }
 
-                               /* Date date4 = formatter.parse(categories.getFinalDate());
+                             /*   Date date4 = formatter.parse(categories.getFinalDate());
                                 assert date4 != null;
                                 if (date4.compareTo(date1) < 0) {
                                     Log.d(TAG, "onBindViewHolder:  current date is greater than early date ");
@@ -432,8 +433,7 @@ public class PaymentActivity1 extends AppCompatActivity {
                                     txtPrice3.setEnabled(true);
                                     textAdd1.setVisibility(View.VISIBLE);
                                     Log.d(TAG, "onBindViewHolder:  current date is less than early date ");
-                                }
-*/
+                                }*/
                             } catch (ParseException e1) {
                                 e1.printStackTrace();
                             }

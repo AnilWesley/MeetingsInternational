@@ -99,9 +99,9 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
                 if (!result.getStart_date().isEmpty()) {
                     @SuppressLint("SimpleDateFormat")
-                    SimpleDateFormat spf = new SimpleDateFormat("MM-dd-yyyy");
+                    SimpleDateFormat spf = new SimpleDateFormat("MMMM dd yyyy");
                     @SuppressLint("SimpleDateFormat")
-                    SimpleDateFormat spf1 = new SimpleDateFormat("MM-dd-yyyy");
+                    SimpleDateFormat spf1 = new SimpleDateFormat("MMMM dd yyyy");
 
 
                     Date newDate = null;
