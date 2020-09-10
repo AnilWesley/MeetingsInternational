@@ -128,9 +128,8 @@ public class PaymentActivity1 extends AppCompatActivity {
             country = getIntent().getStringExtra("country");
         }
         currentDate = new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(new Date());
+
         Log.d(TAG, "onCreate: " + currentDate);
-
-
         currencyType = "\u00a3";
         getCategoriesType();
         getConferenceProducts(currencyType, "Academic");
@@ -293,7 +292,7 @@ public class PaymentActivity1 extends AppCompatActivity {
                                         "$",
                                         conferenceProducts.getType(),
                                         conferenceProducts.getEarly(),
-                                        "",
+                                        conferenceProducts.getNormal(),
                                         conferenceProducts.getFinalX(), "remove"));
                             }
 
@@ -311,7 +310,7 @@ public class PaymentActivity1 extends AppCompatActivity {
                                         "\u20ac",
                                         conferenceProducts.getType(),
                                         conferenceProducts.getEarly(),
-                                        "",
+                                        conferenceProducts.getNormal(),
                                         conferenceProducts.getFinalX(), "remove"));
                             }
 
@@ -330,7 +329,7 @@ public class PaymentActivity1 extends AppCompatActivity {
                                         "\u00a3",
                                         conferenceProducts.getType(),
                                         conferenceProducts.getEarly(),
-                                        "",
+                                        conferenceProducts.getNormal(),
                                         conferenceProducts.getFinalX(), "remove"));
                             }
 
@@ -407,7 +406,7 @@ public class PaymentActivity1 extends AppCompatActivity {
                                 }
 
                                 Date date3 = formatter.parse(categories.getNormalDate());
-                                Log.d(TAG, "onItemSelected: "+date3);
+                                Log.d(TAG, "onItemSelected: " + date3);
                                 assert date3 != null;
                                 if (date3.compareTo(date1) < 0) {
                                     Log.d(TAG, "onBindViewHolder:  current date is greater than early date ");
@@ -456,12 +455,20 @@ public class PaymentActivity1 extends AppCompatActivity {
                                             Log.d(TAG, "bind: " + "price11");
                                             catPrice = Integer.parseInt(categories.getPrice1());
 
-                                        } else {
-                                            productType = "final";
+                                        } else if (txtPrice2.isEnabled()) {
+
+                                            productType = "normal";
                                             txtPrice2.setTextColor(Color.parseColor("#4CAF50"));
                                             txtPrice2.setBackgroundResource(R.drawable.rounded_ouline);
-                                            Log.d(TAG, "bind: " + "price22");
+                                            Log.d(TAG, "bind: " + "price11");
                                             catPrice = Integer.parseInt(categories.getPrice2());
+
+                                        } else {
+                                            productType = "final";
+                                            txtPrice3.setTextColor(Color.parseColor("#4CAF50"));
+                                            txtPrice3.setBackgroundResource(R.drawable.rounded_ouline);
+                                            Log.d(TAG, "bind: " + "price22");
+                                            catPrice = Integer.parseInt(categories.getPrice3());
 
                                         }
 
@@ -477,6 +484,12 @@ public class PaymentActivity1 extends AppCompatActivity {
 
                                             txtPrice1.setTextColor(Color.parseColor("#ffe42828"));
                                             txtPrice1.setBackgroundResource(R.drawable.rounded_no_ouline);
+                                            catPrice = 0;
+
+                                        } else if (txtPrice1.isEnabled()) {
+
+                                            txtPrice2.setTextColor(Color.parseColor("#ffe42828"));
+                                            txtPrice2.setBackgroundResource(R.drawable.rounded_no_ouline);
                                             catPrice = 0;
 
                                         } else {
